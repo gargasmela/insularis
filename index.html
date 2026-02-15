@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insularis — Metal</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a href="#home" class="skip-link">Skip to main content</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#home" class="nav-logo">Insularis</a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-hidden="true">
+      <label for="nav-toggle" class="nav-toggle" aria-label="Toggle menu"><span class="nav-toggle-bar"></span></label>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#media">Media</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <img src="pics/main-brick.png" alt="" role="presentation" class="hero-img">
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-tagline">Heavy. Raw. Uncompromising.</p>
+      </div>
+    </section>
+
+    <section id="media" class="media">
+      <div class="container">
+        <h2 class="section-title">Media</h2>
+        <p class="media-intro">Photos and visuals from the pit. More music and video coming soon.</p>
+        <div class="media-spotify">
+          <a href="https://open.spotify.com/artist/2RiGIRDi4GoJpDbjDnPVJl?si=ZR2857iEQsCoQ_c-dGDPPA" target="_blank" rel="noopener noreferrer" class="btn btn-spotify" aria-label="Listen on Spotify">
+            <svg class="spotify-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            Listen on Spotify
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+        <div class="about-content">
+          <p class="about-lead">The power of four different cultures mixed and mastered in Amsterdam! Come taste it!</p>
+          <p class="about-lead">Insularis is a metal band forged in the underground. Our sound draws from the weight of doom, the edge of thrash, and the atmosphere of black metal—delivered live with full intensity.</p>
+          <p>We believe in writing music that stands the test of time: heavy riffs, crushing dynamics, and lyrics that cut deep. No gimmicks. No compromise. Just the kind of metal that hits you in the chest and stays there.</p>
+          <p>From small clubs to bigger stages, we bring the same energy every night. If you're into bands that still care about tone, groove, and presence, you're in the right place.</p>
+          <a href="#contact" class="btn btn-secondary">Get in touch</a>
+        </div>
+        <div class="gallery" role="list">
+          <div class="gallery-item" role="listitem">
+            <img src="pics/1.png" alt="Insularis photo 1" loading="lazy" width="864" height="1184">
+          </div>
+          <div class="gallery-item" role="listitem">
+            <img src="pics/3.png" alt="Insularis photo 3" loading="lazy" width="864" height="1184">
+          </div>
+          <div class="gallery-item" role="listitem">
+            <img src="pics/4.png" alt="Insularis photo 4" loading="lazy" width="864" height="1184">
+          </div>
+          <div class="gallery-item" role="listitem">
+            <img src="pics/5.png" alt="Insularis photo 5" loading="lazy" width="864" height="1184">
+          </div>
+          <div class="gallery-item" role="listitem">
+            <img src="pics/6.png" alt="Insularis photo 6" loading="lazy" width="864" height="1184">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <p class="contact-intro">Booking, press, or just want to say hi? Drop us a line.</p>
+        <form class="contact-form" action="https://formsubmit.co/genchevem@gmail.com" method="POST" aria-label="Contact form">
+          <input type="hidden" name="_subject" value="Insularis: New message from the website">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" style="display:none">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your name">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="your@email.com">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Your message"></textarea>
+          <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+        <div class="contact-social">
+          <span class="contact-social-label">Find us:</span>
+          <a href="#" class="contact-link" aria-label="Instagram">Instagram</a>
+          <a href="#" class="contact-link" aria-label="Bandcamp">Bandcamp</a>
+          <a href="#" class="contact-link" aria-label="YouTube">YouTube</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; Insularis. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
