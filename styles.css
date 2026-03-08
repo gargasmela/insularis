@@ -448,6 +448,11 @@ section + section::before {
   margin-bottom: var(--space-xl);
 }
 
+.media-links .btn {
+  min-width: 180px;
+  justify-content: center;
+}
+
 .btn-spotify {
   display: inline-flex;
   align-items: center;
