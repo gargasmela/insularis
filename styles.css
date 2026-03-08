@@ -32,6 +32,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 220px;
 }
 
 body {
@@ -231,9 +232,11 @@ img {
 
 .hero-bg {
   position: absolute;
-  inset: 0 0 -12% 0;
-  background: var(--color-surface);
-  clip-path: inset(0 0 12% 0);
+  inset: 0;
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-bg .hero-img {
@@ -241,14 +244,15 @@ img {
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
+  object-fit: contain;
+  object-position: center center;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.6) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.35) 100%);
+  pointer-events: none;
 }
 
 .hero-content {
@@ -376,6 +380,15 @@ section + section::before {
   width: 100%;
 }
 
+.about-img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 0 auto var(--space-lg);
+  border-radius: 4px;
+}
+
 .about-content p {
   margin: 0 0 var(--space-lg);
   color: var(--color-text-muted);
@@ -400,13 +413,38 @@ section + section::before {
   margin-top: var(--space-lg);
 }
 
+/* Video */
+.video-section {
+  padding: var(--space-2xl) var(--space-xl);
+  background: rgba(10, 10, 10, 0.55);
+}
+
+.video-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 /* Media / Gallery */
 .media-intro {
   margin: 0 0 var(--space-xl);
   color: var(--color-text-muted);
 }
 
-.media-spotify {
+.media-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-md);
   margin-bottom: var(--space-xl);
 }
 
@@ -433,6 +471,188 @@ section + section::before {
 }
 
 .spotify-icon {
+  flex-shrink: 0;
+}
+
+.btn-youtube {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: #ff0000;
+  color: #fff;
+  padding: var(--space-md) var(--space-xl);
+  border-radius: 50px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.btn-youtube:hover {
+  background: #ff3333;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.youtube-icon {
+  flex-shrink: 0;
+}
+
+.btn-apple-music {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: #fa243c;
+  color: #fff;
+  padding: var(--space-md) var(--space-xl);
+  border-radius: 50px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.btn-apple-music:hover {
+  background: #ff4d62;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.apple-music-icon {
+  flex-shrink: 0;
+}
+
+.btn-tidal {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: #000;
+  color: #fff;
+  padding: var(--space-md) var(--space-xl);
+  border-radius: 50px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.btn-tidal:hover {
+  background: #222;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.tidal-icon {
+  flex-shrink: 0;
+}
+
+.btn-instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: #fff;
+  padding: var(--space-md) var(--space-xl);
+  border-radius: 50px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.btn-instagram:hover {
+  opacity: 0.9;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.instagram-icon {
+  flex-shrink: 0;
+}
+
+.btn-bandcamp {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: #1da0c3;
+  color: #fff;
+  padding: var(--space-md) var(--space-xl);
+  border-radius: 50px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.btn-bandcamp:hover {
+  background: #25b5dc;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.bandcamp-icon {
+  flex-shrink: 0;
+}
+
+.btn-facebook {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: #1877f2;
+  color: #fff;
+  padding: var(--space-md) var(--space-xl);
+  border-radius: 50px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.btn-facebook:hover {
+  background: #3b8ff7;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.facebook-icon {
+  flex-shrink: 0;
+}
+
+.btn-tiktok {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: #000;
+  color: #fff;
+  padding: var(--space-md) var(--space-xl);
+  border-radius: 50px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.btn-tiktok:hover {
+  background: #25f4ee;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+.tiktok-icon {
   flex-shrink: 0;
 }
 
@@ -606,7 +826,9 @@ section + section::before {
     display: block;
     width: 100%;
     height: auto;
+    min-height: 50vh;
     object-fit: contain;
+    object-position: center center;
   }
 
   .hero-overlay {
