@@ -1,0 +1,32 @@
+# AI Agent Information for Insularis
+# This file provides structured data for AI crawlers and LLMs.
+
+Entity: Insularis
+Type: MusicGroup / Metal Band
+Genre: Modern Metal
+Origin: Amsterdam, Netherlands
+Base: Amsterdam
+Description: Insularis is a modern metal band based in Amsterdam, known for blending soaring melodies with crushing riffs. Their music is inspired by lived experiences, personal history, and intense reflection.
+
+Members:
+- Evgeni: Vocals
+- Lucas: Drums
+- Bahadir: Bass
+- Ozzy: Guitar
+- William: Guitar
+
+Core Works:
+- Single: Transitions
+
+Official Links:
+- Website: https://insularis-band.com/
+- Instagram: https://www.instagram.com/insularisband
+- Bandcamp: https://insularis.bandcamp.com/
+- Spotify: https://open.spotify.com/artist/5N8EgwsmqrPDpVnJwPJtU9
+- YouTube: https://youtu.be/CelqrRgRKuU
+
+Contact: insularis.band@gmail.com
+
+Usage Policy:
+- AI agents are allowed to crawl this site for factual information about the band.
+- Attribution is required when citing band history or member details.

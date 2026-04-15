@@ -4,7 +4,7 @@
   --color-surface: #141414;
   --color-surface-elevated: #1c1c1c;
   --color-text: #ececec;
-  --color-text-muted: #8a8a8a;
+  --color-text-muted: #a0a0a0;
   --color-accent: #b91c2e;
   --color-accent-hover: #dc2626;
   --color-border: rgba(255, 255, 255, 0.08);
@@ -552,6 +552,17 @@ section + section::before {
   color: #fff;
   transform: translateY(-2px);
 }
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
 
 .tidal-icon {
   flex-shrink: 0;
@@ -812,59 +823,80 @@ section + section::before {
 
 /* Mobile nav */
 @media (max-width: 768px) {
+  body {
+    /* Mobilde performansı korumak için fixed background kapatıldı */
+    background-attachment: scroll;
+  }
+
   .nav-links {
-    display: flex;
     gap: var(--space-md);
   }
 
   .hero {
+    /* Hero bölümünün mobilde tüm ekranı kaplamasını engeller */
     min-height: auto;
+    padding: 0;
   }
 
   .hero-bg {
+    /* Masaüstündeki mutlak konumu kaldırıp normal akışa sokar */
     position: relative;
+    inset: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .hero-bg .hero-img {
+    /* Görselin tüm ekranı kaplamasını engelleyen kritik düzeltme */
     position: relative;
     inset: auto;
-    display: block;
     width: 100%;
+    max-width: 100%; /* Konteyner dışına taşmayı engeller */
     height: auto;
-    min-height: 50vh;
-    object-fit: contain;
+    /* Mobilde görselin çok büyük olmaması için maksimum yükseklik sınırı */
+    max-height: 60vh; 
+    object-fit: contain; /* Görseli kırpmaz, içine sığdırır */
     object-position: center center;
-  }
-
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
+    display: block;
   }
 
   .hero-content {
-    position: absolute;
-    inset: 0;
-    justify-content: flex-end;
-    padding-bottom: var(--space-3xl);
+    /* Masaüstündeki mutlak konumu kaldırır */
+    position: relative;
+    inset: auto;
+    padding: var(--space-lg);
+    background: rgba(10, 10, 10, 0.8); /* Mobilde metin arkasına fon */
   }
 
-  .hero-content .btn {
-    position: static;
-    transform: none;
-    margin-top: var(--space-lg);
+  /* HTML'de .hero-content içinde visually-hidden h1 var,
+     eğer mobilde başka içerik varsa bu kurallar uygulanır. */
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+    letter-spacing: 0.1em;
   }
 
-  .hero-content .btn:hover {
-    transform: translateY(-2px);
+  .hero-logo {
+    width: 120px;
   }
 }
 
 @media (max-width: 480px) {
-  .hero-title {
-    letter-spacing: 0.08em;
+  .nav-logo-img {
+    width: 100%;
+    max-width: 280px;
   }
 
-  .gallery {
-    grid-template-columns: 1fr;
+  .nav-links {
+    gap: var(--space-sm);
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+  }
+
+  .hero-bg .hero-img {
+    /* Çok küçük ekranlarda daha da küçültmek için */
+    max-height: 50vh;
   }
 }
